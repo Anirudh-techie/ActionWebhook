@@ -20,7 +20,7 @@ app.handle('getGem', conv => {
       prev += n;
       if(prev.toString().split("").length>1){
         num = prev;
-        console.log(num,root(num))
+        console.log(num)
         return root(num);
       }
     });
