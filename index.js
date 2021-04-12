@@ -10,6 +10,10 @@ const app = conversation();
 app.handle('getGem', conv => {
   var BirthDate = conv.intent.params.BirthDate.resolved;
   var prev = 0;
+  if(BirthDate > 31 || BirthDate <1){
+    conv.add("pls give a valid birthdate");
+    return;
+  }
   BirthDate.toString().split("").forEach((n) => {
     n = parseInt(n)
     prev += n;
