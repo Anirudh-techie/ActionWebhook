@@ -10,7 +10,7 @@ const app = conversation();
 app.handle('getGem', conv => {
   var BirthDate = conv.intent.params.BirthDate.resolved;
   if (BirthDate > 31 || BirthDate < 1) {
-    conv.add("Please give a valid birthdate");
+    conv.ask("Please give a valid birthdate");
     return;
   }
   function root(num) {
@@ -30,6 +30,10 @@ app.handle('getGem', conv => {
 
   var Root = root(BirthDate)
   var desc  = description(numToGem(Root) ? numToGem(Root) : null)
+  if (!desc) {
+    conv.ask("Please give a valid birthdate");
+    return;
+  }
   conv.add(new Card({title:numToGem(Root) ? numToGem(Root) : "Error",text:desc}))
   conv.add("Thanks for using AstroVision GemFinder!!!");
 });
@@ -84,7 +88,7 @@ function description(gem){
     return desc[gem];
   }
   else{
-    return "Please give a valid birthdate"
+    return  null
   }
 
 }
