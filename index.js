@@ -26,12 +26,22 @@ var exApp = express();
 exApp.use(bodyParser.json(), app).listen(process.env.PORT);
 
 function numToGem(num){
-  
-  switch (num) {
-    case 1:
-      return 'Ruby'
-    
-    default:
-      return null;
+  var Gems=[
+    "Ruby",
+    "Pearl",
+    "Yellow Sapphire",
+    "Hessonite (Gomed)",
+    "Emerald",
+    "Diamond",
+    "Cat's Eye (Vidurya)",
+    "Blue Sapphire",
+    "Red Coral"
+]
+  num = num-1;
+  var gem = gems[num];
+  if(gem){
+    return gem;
+  }else{
+    return null;
   }
 }
