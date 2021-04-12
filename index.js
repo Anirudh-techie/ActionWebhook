@@ -35,6 +35,7 @@ app.handle('getGem', conv => {
     return;
   }
   conv.add(new Card({ title: numToGem(Root) ? numToGem(Root) : "Error", text: desc }));
+  conv.add("<speak>"+numToGem(Root)+"</speak><speak>"+desc+"</speak>")
   // conv.add(`Thanks for using AstroVision GemFinder!!! `);
 });
 function description(gem) {
