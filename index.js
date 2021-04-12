@@ -8,8 +8,12 @@ const { conversation } = require('@assistant/conversation');
 const app = conversation();
 
 app.handle('getGem', conv => {
-  conv.add(JSON.stringify(conv.intent.params))  
-
+var BirthDate= conv.intent.params.BirthDate;
+var prev = 0;
+BirthDate.toString().split("").forEach((n)=>{
+  prev +=n;
+});
+conv.add(prev.toString())
 });
 
 
