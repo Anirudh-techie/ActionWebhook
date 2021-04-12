@@ -3,30 +3,15 @@ const express = require('express');
 const bodyParser = require('body-parser');  
 
 // Import the service function and various response classes
+const { conversation } = require('@assistant/conversation');
 
-const {
+const app = conversation();
 
-  dialogflow,
-
-  Image,
-
-  Table,
-
-  Carousel,
-
-} = require('actions-on-google');
-
-const app = dialogflow({
-
-  debug: true
-
+app.handle('plswork', conv => {
+  // Implement your code here
+  conv.add("<your prompt here>");
 });
 
-app.intent('1', (conv) => {
-
-  conv.ask('How are you?');
-
-});
 
 var exApp = express();
 
