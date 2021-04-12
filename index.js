@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 // Import the service function and various response classes
-const { conversation, Card } = require('@assistant/conversation');
+const { conversation, Card, Simple } = require('@assistant/conversation');
 
 const app = conversation();
 
@@ -35,7 +35,7 @@ app.handle('getGem', conv => {
     return;
   }
   conv.add(new Card({ title: numToGem(Root) ? numToGem(Root) : "Error", text: desc }));
-  conv.add({speech:"<speak>"+numToGem(Root)+'<break time="1"/>'+desc+"</speak>"})
+  conv.add(new Simple({speech:"<speak>"+numToGem(Root)+'<break time="1"/>'+desc+"</speak>"}))
   // conv.add(`Thanks for using AstroVision GemFinder!!! `);
 });
 function description(gem) {
