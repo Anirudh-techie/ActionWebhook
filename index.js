@@ -8,7 +8,8 @@ const { conversation } = require('@assistant/conversation');
 const app = conversation();
 
 app.handle('getGem', conv => {
-  conv.add(conv.prompt)  
+  conv.add(JSON.stringify(conv.intent.params))  
+
 });
 
 
