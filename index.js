@@ -7,9 +7,8 @@ const { conversation } = require('@assistant/conversation');
 
 const app = conversation();
 
-app.handle('plswork', conv => {
-  // Implement your code here
-  conv.add("<your prompt here>");
+app.handle('getGem', conv => {
+  conv.add(conv.prompt)  
 });
 
 
