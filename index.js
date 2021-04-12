@@ -34,8 +34,7 @@ app.handle('getGem', conv => {
     conv.add("Please give a valid birthdate");
     return;
   }
-  conv.add(new Card({ title: numToGem(Root) ? numToGem(Root) : "Error", text: desc }));
-  conv.add("<speak>"+numToGem(Root)+'<break time="1"/>'+desc+"</speak>")
+  conv.add(new Card({ title:numToGem(Root)?  "<speak>"+numToGem(Root)+"</speak>"  : "<speak>Error</speak>", text: "<speak>"+desc+"</speak>" }));
   // conv.add(`Thanks for using AstroVision GemFinder!!! `);
 });
 function description(gem) {
