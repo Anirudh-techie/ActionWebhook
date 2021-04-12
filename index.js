@@ -15,11 +15,11 @@ app.handle('getGem', conv => {
   }
   function root(num){
     var rt = 0;
-    rt = num.toString().split("").forEach((n) => {
+    num.toString().split("").forEach((n) => {
       n = parseInt(n)
       rt += n;
     });
-    
+
     if(rt.toString().split("").length>1){
       console.log(num)
       return root(num);
