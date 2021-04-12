@@ -19,6 +19,7 @@ app.handle('getGem', conv => {
       n = parseInt(n)
       rt += n;
     });
+    
     if(rt.toString().split("").length>1){
       console.log(num)
       return root(num);
