@@ -16,7 +16,7 @@ app.handle('getGem', conv => {
 
   });
 
-  conv.add(numToGem(prev))
+  conv.add(numToGem(prev)?numToGem(prev):"error")
 
   
 });
