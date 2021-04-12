@@ -11,6 +11,7 @@ app.handle('getGem', conv => {
 var BirthDate= conv.intent.params.BirthDate.resolved;
 var prev = 0;
 BirthDate.toString().split("").forEach((n)=>{
+  n = parseInt(n)
   prev +=n;
 });
 conv.add(prev.toString())
