@@ -9,23 +9,25 @@ const app = conversation();
 
 app.handle('getGem', conv => {
   var BirthDate = conv.intent.params.BirthDate.resolved;
-  var prev = 0;
   if(BirthDate > 31 || BirthDate <1){
     conv.add("pls give a valid birthdate");
     return;
   }
   function root(num){
-    num.toString().split("").forEach((n) => {
+    var rt = 0;
+    rt = num.toString().split("").forEach((n) => {
       n = parseInt(n)
-      prev += n;
-      if(prev.toString().split("").length>1){
-        num = prev;
-        console.log(num)
-        return root(num);
-      }
+      rt += n;
     });
-    return prev;
+    if(rt.toString().split("").length>1){
+      console.log(num)
+      return root(num);
+    }else{
+      return rt;
+    }
   }
+  
+
   var Root = root(BirthDate)
   console.log(Root)
   conv.add(numToGem(Root)?numToGem(Root):"error")
