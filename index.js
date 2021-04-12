@@ -25,7 +25,7 @@ app.handle('getGem', conv => {
     });
   }
   var Root = root(BirthDate)
-  
+  console.log(Root)
   conv.add(numToGem(Root)?numToGem(Root):"error")
 
   
