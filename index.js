@@ -22,7 +22,8 @@ app.handle('getGem', conv => {
 
     if(rt.toString().split("").length>1){
       console.log(num)
-      return root(num);
+      //return root(num);
+      return rt;
     }else{
       return rt;
     }
