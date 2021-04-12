@@ -30,4 +30,5 @@ app.intent('1', (conv) => {
 
 var exApp = express();
 
-exApp.use(bodyParser.json(), app).listen(3000);
+exApp.use(bodyParser.json(), app).listen(process.env.PORT);
+
