@@ -38,7 +38,7 @@ function numToGem(num){
     "Red Coral"
 ]
   num = num-1;
-  var gem = gems[num];
+  var gem = Gems[num];
   if(gem){
     return gem;
   }else{
