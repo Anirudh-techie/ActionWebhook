@@ -14,13 +14,19 @@ app.handle('getGem', conv => {
     conv.add("pls give a valid birthdate");
     return;
   }
-  BirthDate.toString().split("").forEach((n) => {
-    n = parseInt(n)
-    prev += n;
-
-  });
-
-  conv.add(numToGem(prev)?numToGem(prev):"error")
+  function root(num){
+    num.toString().split("").forEach((n) => {
+      n = parseInt(n)
+      prev += n;
+      if(prev.toString().split("").length>1){
+        num = prev;
+        root(num);
+      }
+    });
+  }
+  var Root = root(BirthDate)
+  
+  conv.add(numToGem(Root)?numToGem(Root):"error")
 
   
 });
