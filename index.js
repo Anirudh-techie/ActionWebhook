@@ -20,9 +20,10 @@ app.handle('getGem', conv => {
       prev += n;
       if(prev.toString().split("").length>1){
         num = prev;
-        root(num);
+        return root(num);
       }
     });
+    return prev;
   }
   var Root = root(BirthDate)
   console.log(Root)
