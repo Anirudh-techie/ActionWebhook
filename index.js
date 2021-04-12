@@ -21,9 +21,7 @@ app.handle('getGem', conv => {
     });
 
     if(rt.toString().split("").length>1){
-      console.log(num)
-      //return root(num);
-      return rt;
+      return root(rt);
     }else{
       return rt;
     }
@@ -31,7 +29,6 @@ app.handle('getGem', conv => {
   
 
   var Root = root(BirthDate)
-  console.log(Root)
   conv.add(numToGem(Root)?numToGem(Root):"error")
 
   
